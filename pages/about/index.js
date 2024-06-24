@@ -1,5 +1,9 @@
 import React, { useState} from "react";
 
+//framer-motion
+import {animate, motion} from 'framer-motion'
+import { fadeIn } from "../../variants";
+
 // icons
 import {
   FaHtml5,
@@ -99,6 +103,19 @@ const About = () => {
   const [Index, setIndex] = useState(0);
   return <div>
     <Circles />
+    {/* avatar img */}
+    <motion.div 
+    variants={fadeIn('right', 0.2)} 
+    initial="hidden" 
+    animate="show" 
+    exit="hidden" 
+    className="hidden xl:flex absolute bottom-0 -left-[370px]">
+      <Avatar />
+    </motion.div>
+    <div className="container mx-auto">
+      <div>text</div>
+      <div>about 1:17:59</div>
+    </div>
   </div>;
 };
 
