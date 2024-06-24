@@ -1,3 +1,5 @@
+import React, { useState} from "react";
+
 // icons
 import {
   FaHtml5,
@@ -17,25 +19,25 @@ import {
 
 
 //  data
-const aboutData = [
+export const aboutData = [
   {
     title: 'skills',
     info: [
       {
         title: 'Web Development',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          <FaHtml5 key="1"/>,
+          <FaCss3 key="2"/>,
+          <FaJs key="3"/>,
+          <FaReact key="4"/>,
+          <SiNextdotjs key="5"/>,
+          <SiFramer key="6"/>,
+          <FaWordpress key="7"/>,
         ],
       },
       {
         title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        icons: [<FaFigma key="first" />, <SiAdobexd key="second"/>, <SiAdobephotoshop key="third" />],
       },
     ],
   },
@@ -88,8 +90,16 @@ const aboutData = [
   },
 ];
 
+
+//components
+import Avatar from "../../components/Avatar";
+import Circles from '../../components/Circles';
+
 const About = () => {
-  return <div>About</div>;
+  const [Index, setIndex] = useState(0);
+  return <div>
+    <Circles />
+  </div>;
 };
 
 export default About;
